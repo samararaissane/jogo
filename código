@@ -1,0 +1,360 @@
+var tela = 0
+var perguntas = []
+var i = 0
+
+var xBMenu = 100;
+var yBMenu1 = 140;
+var yBMenu2 = 210;
+var yBMenu3 = 280;
+var larguraBMenu = 200;
+var alturaBMenu = 60;
+var bordaBMenu = 10;
+
+var xBAlt = 70;
+var yBAlt1 = 200;
+var yBAlt2 = 260;
+var yBAlt3 = 320;
+var larguraBAlt = 260;
+var alturaBAlt = 50;
+var bordaBAlt = 10; 
+    
+perguntas[0] = "Ela não acredita na sua inocência." 
+perguntas[1] = "Os mangás, li-os todos."
+perguntas[2] = "Nós aprendemos trigonometria."
+perguntas[3] = "Entreguei a prova ao professor."
+perguntas[4] = "Nicolas obedeceu às regras."
+
+function setup() {
+  createCanvas(400, 400) 
+  }
+
+function draw() {
+
+  if (tela==0) {
+    background(32,160,170)
+
+    fill(10)
+    textSize(44)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("Complementos",200,108)
+    
+    fill(250,0,40)
+    textSize(43)
+    textAlign(CENTER)
+    stroke(10)
+    textStyle(BOLDITALIC)
+    text("Complementos",200,105)
+    
+    fill(255,200,40)
+    
+    if (mouseX > xBMenu && mouseX < xBMenu + larguraBMenu && mouseY > yBMenu1 && mouseY < yBMenu1 + alturaBMenu) {
+       stroke(0,250,154)
+       if(mouseIsPressed) {
+         tela = 1}
+    }
+    rect(xBMenu, yBMenu1, larguraBMenu, alturaBMenu, bordaBMenu)
+    
+    stroke(10)
+
+    if (mouseX > xBMenu && mouseX < xBMenu + larguraBMenu && mouseY > yBMenu2 && mouseY < yBMenu2 + alturaBMenu) {
+      stroke(0,250,154)
+      if(mouseIsPressed) {
+         tela = 2}
+    }
+    rect(xBMenu, yBMenu2, larguraBMenu, alturaBMenu, bordaBMenu)
+    
+    stroke(10)
+
+     if (mouseX > xBMenu && mouseX < xBMenu + larguraBMenu && mouseY > yBMenu3 && mouseY < yBMenu3 + alturaBMenu) {
+       stroke(0,250,154)
+       if(mouseIsPressed) {
+         tela = 3}
+     }
+    rect(xBMenu, yBMenu3, larguraBMenu, alturaBMenu, bordaBMenu)
+
+    noStroke()
+    fill(10)
+    textSize(20)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("JOGAR",200,175)
+    text("INSTRUÇÕES",200,245)
+    text("CRÉDITOS",200,315)
+  }
+
+  if (tela==1) {
+    background(32,160,170)
+
+    fill(250)
+    stroke(10)
+    rect(70,30,260,100,10)
+    
+    noStroke()
+    fill(10);
+    textSize(15);
+    textAlign(CENTER);
+    text(perguntas[i],200,85)
+    
+    fill(255,200,40)
+
+    stroke(10)
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+       stroke(0,250,154)
+      }
+    rect(xBAlt, yBAlt1, larguraBAlt, alturaBAlt, bordaBAlt)
+
+    stroke(10)
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+       stroke(0,250,154)
+      }
+    rect(xBAlt, yBAlt2, larguraBAlt, alturaBAlt, bordaBAlt)
+
+    stroke(10)
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+       stroke(0,250,154)
+      }
+    rect(xBAlt, yBAlt3, larguraBAlt, alturaBAlt, bordaBAlt)
+
+    noStroke()
+    fill(10);
+    textSize(15);
+    textAlign(CENTER);
+    text("Qual a classificação do complemento verbal?",200,170)
+    textSize(18);
+    textAlign(CENTER)
+    text("Objeto direto",200,230);
+    text("Objeto indireto",200,290);
+    text("Objeto direto e indireto",200,350)
+    noStroke()
+  }
+
+  if (tela==2) {
+    background(32,160,170)
+    
+    fill(10)
+    textSize(35)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("Instruções",200,74)
+    textSize(19);
+    textAlign(CENTER)
+    text("Voltar",330,370);
+    fill(250,0,10)
+    stroke(10)
+    textSize(34)
+    text("Instruções",200,70)
+    
+    if (mouseX > 300 && mouseX < 360 && mouseY > 320 && mouseY < 370) {
+      fill(10)
+      textSize(20);
+      textAlign(CENTER)
+      stroke(250,250,210)
+      text("Voltar",330,370);
+      if(mouseIsPressed) {
+         tela = 0 } 
+      noStroke()
+    }
+    
+    var xQI = 40;
+    var yQI = 100;
+    var larguraQI = 320;
+    var alturaQI = 240;
+    var bordaQI = 10;
+    
+    fill(255,200,40)
+    stroke(10)
+    rect(xQI, yQI, larguraQI, alturaQI, bordaQI)
+    noStroke()
+    
+    fill(10)
+    textSize(14)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("Identifique o complemento verbal presente",200,120)
+    text("em cada uma das frases geradas a fim de",200,140)
+    text("subir de nível. Para selecionar uma",200,160)
+    text("opção basta utilizar o mouse e clicar no",200,180)
+    text("quadro que possuir a alternativa desejada.",200,200)
+    text("Disciplina: Língua portuguesa",200,230)
+    text("(EF08LP07) Diferenciar, em textos lidos ou de", 200, 260)
+    text("produção própria, complementos diretos e",200,280)
+    text("indiretos de verbos transitivos, apropriando-se",200,300) 
+    text("da regência de verbos de uso frequente.",200,320) 
+    
+  } 
+
+  if (tela==3) {
+    background	(32,160,170)
+    
+    fill(10)
+    textSize(36)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("Créditos",200,74)
+    textSize(19);
+    textAlign(CENTER)
+    text("Voltar",330,370);
+    fill(250,0,40)
+    stroke(10)
+    textSize(34)
+    text("Créditos",200,70)
+    
+    if (mouseX > 300 && mouseX < 360 && mouseY > 320 && mouseY < 370) {
+      fill(10)
+      textSize(20);
+      textAlign(CENTER)
+      stroke(250,250,210)
+      text("Voltar",330,370);
+      if(mouseIsPressed) {
+         tela = 0 } 
+      noStroke()
+    }
+    
+    var xCI = 40;
+    var yCI = 100;
+    var larguraCI = 320;
+    var alturaCI = 240;
+    var bordaCI = 10;
+    
+    fill(255,200,40)
+    stroke(10)
+    rect(xCI, yCI, larguraCI, alturaCI, bordaCI)
+    noStroke()
+    
+    fill(10)
+    textSize(15)
+    textAlign(CENTER)
+    textStyle(BOLDITALIC)
+    text("Progamadora: Samara Raissane de",200,140)
+    text("Araújo Medeiros",200,160)
+    text("Orientadores: Orivaldo Santana e",200,220)
+    text("Morgana Vilela",200,240)
+    text("Jogo Educacional",200,300)
+    text("ECT-UFRN",200,320)
+  }
+    
+  if (tela==4) {
+    background(32,160,170)
+    
+    fill(250)
+    stroke(10)
+    rect(70,100,260,200,10)
+    
+    noStroke()
+    fill(10)
+    textSize(20);
+    textAlign(CENTER);
+    text("Essa não!",200,140)
+    text("Você perdeu :(", 200, 170)
+    text("Não desista!", 200, 210)
+    text("Volte ao início", 200, 240)
+    text("e tente novamente.", 200, 270)
+    text("Voltar",350,350);
+
+    if (mouseX > 320 && mouseX < 380 && mouseY > 320 && mouseY < 360) {
+      stroke(250)
+      textSize(22);
+      textAlign(CENTER)
+      text ("Voltar",350,350);
+      if(mouseIsPressed) {
+        tela = 0 } 
+    }
+  }
+
+  if (tela==5) {
+    background(32,160,170)
+    
+    fill(250)
+    stroke(10)
+    rect(70,100,260,200,10)
+    
+    noStroke()
+    fill(10)
+    textSize(20);
+    textAlign(CENTER);
+    text("Parabéns!",200,140)
+    text("Você venceu :)", 200, 170)
+    text("Você pode jogar outra", 200, 210)
+    text("vez! Volte ao menu", 200, 240)
+    text("e tente novamente.", 200, 270)
+    text("Voltar",350,350);
+
+    if (mouseX > 320 && mouseX < 380 && mouseY > 320 && mouseY < 360) {
+      stroke(250)
+      textSize(22);
+      textAlign(CENTER)
+      text ("Voltar",350,350);
+      if(mouseIsPressed) {
+        tela = 0 } 
+    }
+  }  
+}
+
+function mouseClicked() {
+if (tela === 1) {
+  if(i==0) {
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+      tela = 4 
+      i = 0 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+      i = 1 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+      tela = 4 
+      i = 0} }
+  
+  else if(i==1) {
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+      i = 2 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+      tela = 4 
+      i = 0}
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+      tela = 4 
+      i = 0} } 
+
+  else if(i==2) {
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+      i = 3 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+      tela = 4 
+      i = 0}
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+      tela = 4 
+      i = 0} } 
+
+  else if(i==3) {
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+      tela = 4
+      i = 0 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+      tela = 4 
+      i = 0}
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+      i = 4} } 
+  
+  else if(i==4) {
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt1 && mouseY < yBAlt1 + alturaBAlt) {
+      tela = 4
+      i = 0 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt2 && mouseY < yBAlt2 + alturaBAlt) {
+      tela = 5 
+      i = 0 }
+
+    if (mouseX > xBAlt && mouseX < xBAlt + larguraBAlt && mouseY > yBAlt3 && mouseY < yBAlt3 + alturaBAlt) {
+      tela = 4
+      i = 0} } 
+}
+}
